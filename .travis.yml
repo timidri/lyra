@@ -18,10 +18,10 @@ matrix:
         - sudo apt-get install -y upx
         # - make dist-release
         # TODO: make docker && docker push
-    - os: osx
-      before_deploy:
-        # TODO: Deploy step pushes bottle
-      after_deploy:
+    # - os: osx
+    #   before_deploy:
+    #     # TODO: Deploy step pushes bottle
+    #   after_deploy:
 #        - make bottle
         # TODO: push new bottle commit to lyraproj/homebrew-lyra
 deploy:
