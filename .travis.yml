@@ -12,6 +12,7 @@ jobs:
         - nvm use 11
         - node --version
         - make format tidy all smoke-test-ts smoke-test-go-wf
+        - make dist-release
       before_deploy:
         - sudo apt-get install -y upx
         - make dist-release
