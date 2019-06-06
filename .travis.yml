@@ -10,12 +10,14 @@ script:
   - nvm use 11
   - node --version
   # - make all
+  # disabling for now to speed up for testing
+  -  make lyra
 # Use different deploy prep based on OS
 matrix:
   include:
     - os: linux
       before_deploy:
-        # - sudo apt-get install -y upx
+         - sudo apt-get install -y upx-ucl
         # - make dist-release
         # TODO: make docker && docker push
     # - os: osx
