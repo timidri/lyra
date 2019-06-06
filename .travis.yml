@@ -9,13 +9,13 @@ script:
   - nvm install 11
   - nvm use 11
   - node --version
-  - make all
+  # - make all
 # Use different deploy prep based on OS
 matrix:
   include:
     - os: linux
       before_deploy:
-        - sudo apt-get install -y upx
+        # - sudo apt-get install -y upx
         # - make dist-release
         # TODO: make docker && docker push
     # - os: osx
