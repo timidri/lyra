@@ -16,6 +16,7 @@ script:
 matrix:
   include:
     - os: linux
+      dist: trusty
       before_deploy:
          - sudo apt-get install -y upx-ucl
         # - make dist-release
