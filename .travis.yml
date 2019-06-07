@@ -24,13 +24,13 @@ matrix:
     - os: osx
       before_deploy:
       # TODO: Deploy step pushes bottle
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        mkdir -p /usr/local/Homebrew/Library/Taps/lyraproj
-        pushd /usr/local/Homebrew/Library/Taps/lyraproj
-        git clone git@github.com:timidri/homebrew-lyra.git
-        popd
-        brew install --build-bottle lyra
-        brew bottle lyra
+       - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+       - mkdir -p /usr/local/Homebrew/Library/Taps/lyraproj
+       - pushd /usr/local/Homebrew/Library/Taps/lyraproj
+       - git clone git@github.com:timidri/homebrew-lyra.git
+       - popd
+       - brew install --build-bottle lyra
+       - brew bottle lyra
     #   after_deploy:
 #        - make bottle
         # TODO: push new bottle commit to lyraproj/homebrew-lyra
