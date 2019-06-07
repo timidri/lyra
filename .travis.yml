@@ -17,8 +17,8 @@ matrix:
   include:
     - os: linux
       dist: trusty
-      before_deploy:
-         - sudo apt-get install -y upx
+      # before_deploy:
+        #  - sudo apt-get install -y upx
         # - make dist-release
         # TODO: make docker && docker push
     # - os: osx
@@ -33,7 +33,8 @@ deploy:
     # secure: xgSvTz8VRXtl7DhZzmG0HkLJjD3zEWFkvii43NeTs/r76lSwPZzMJL3+h+PK5mUMX8hx1mzozPwiwecpdNf7pIRLIbIc4e3e8Pqu6b1X5HRNiDfKO/d1IiUEcV33X/F5i8Gwcbz13MPdiB5KJ2zjW8h+ApsuPJqUKNuNaeBv4irZW9GPBNxU592ND3ht1ZvA1q/XSZHGjv3JNbVYDm6SF+29kL5VyaYhh8DD7eEvaXBQNlxK3qjHWSqe5JfpwuHY1XU3JDuSLD3OG+ZrMrQHxECq76DWVfqKTWMvW/NTkLjGyOKjWdOfBszc9FRDn2UzjB5hzt5sD1k+X5P3OWv5a7jx47xCcJi5jrIQa+96n0uwf0HtIC8dbDaWaVB5CWsQne+3ImWs4bbFNrXmZjBBQ4qwXPoVYzCxDcOkRk37ZUid6qE7qNMjUJdtl18rVN5RhKVnxuFuc2C1WoEXs1wAKOYEt7UP1R1If7qo0DexKkcPTP/qKy69Kt2wx3X27nF8AjpA3NJUfc6XDZWltud7RIfSA8+878ekgCditRh4Ph0c3fSuQHge3PYlpzmk5U4Cd3Ol+Ow/Rgktt4YGuv2ZqMx3LaYAUF0nxNdHPhc1OVi/9hb3+oopj7Detzugv1ExG0skBMHISENncpTe+DdpOtEpsu5g64DpZJ4PtMDWSlg=
     secure: Z0TFlRyDYpouSa9lDOQizwCVOr2215nG4acDgdZ7/hd+7UgkM7z64GIeHySM10mXvY/htBeXAq51uMD+VFJvfHWR5mkJxGvdwDEAFFSKfmYrQcm0wI3ekwSIr9heT8hpik/82SvHGExENgpgfgkc3q8mg+Q82Kg0z22OCQXSY4tKT92oNSo03sYWFTOex44Q6qYGoHtc6dGZpraF7ZwsauqY7s1YxCXAo2bOaXVfng//JeYGHxllJrO9SxXpu3C1V8Mj5yyy729JfILKyNSo+z+vlfos8kx9WmrbQ8E5MCfvom3gt3na5mU2jK1JBDBrkb1VbFTDPSS+M+PHBWiiCAB4KZ9cOjVryF02TdNomfpAQVJoUYtmCgyWLok5/cP8PPbftzgnQ28eL6x+eLxor4Jpqn8hy+z+/qZHqFN1pQj6rVMDsfBBeDTTeyh3IGRXpFBfYC/jZXrOVRw1v05Ed+rYHDoBp444rNRhuhCcutbt1jfysh7xJKk3++etSuA6hURJXKJDnv7DE+PzpFd1yzJLceo35NvTCsMFbxeay33pYOUWo3gMF46tUufJGiC+DCA8iZN9B0gx8iP+SEHy70+nlgoaYQ1F6MK1MDy6rihVcV8M4rPS+wTmtHJZ1ULABiek7hOgGy5nH5GTdqUr6Syc6Wo7mdNKSkckUHCzYb0=
   file_glob: true
-  file: build/*.tar.gz*
+  # file: build/*.tar.gz*
+  file: build/**/*
   skip_cleanup: true
   on:
     repo: timidri/lyra
