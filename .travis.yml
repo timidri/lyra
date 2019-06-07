@@ -21,9 +21,16 @@ matrix:
         #  - sudo apt-get install -y upx
         # - make dist-release
         # TODO: make docker && docker push
-    # - os: osx
-    #   before_deploy:
-    #     # TODO: Deploy step pushes bottle
+    - os: osx
+      before_deploy:
+      # TODO: Deploy step pushes bottle
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        mkdir -p /usr/local/Homebrew/Library/Taps/lyraproj
+        pushd /usr/local/Homebrew/Library/Taps/lyraproj
+        git clone git@github.com:timidri/homebrew-lyra.git
+        popd
+        brew install --build-bottle lyra
+        brew bottle lyra
     #   after_deploy:
 #        - make bottle
         # TODO: push new bottle commit to lyraproj/homebrew-lyra
@@ -34,7 +41,7 @@ deploy:
     secure: Z0TFlRyDYpouSa9lDOQizwCVOr2215nG4acDgdZ7/hd+7UgkM7z64GIeHySM10mXvY/htBeXAq51uMD+VFJvfHWR5mkJxGvdwDEAFFSKfmYrQcm0wI3ekwSIr9heT8hpik/82SvHGExENgpgfgkc3q8mg+Q82Kg0z22OCQXSY4tKT92oNSo03sYWFTOex44Q6qYGoHtc6dGZpraF7ZwsauqY7s1YxCXAo2bOaXVfng//JeYGHxllJrO9SxXpu3C1V8Mj5yyy729JfILKyNSo+z+vlfos8kx9WmrbQ8E5MCfvom3gt3na5mU2jK1JBDBrkb1VbFTDPSS+M+PHBWiiCAB4KZ9cOjVryF02TdNomfpAQVJoUYtmCgyWLok5/cP8PPbftzgnQ28eL6x+eLxor4Jpqn8hy+z+/qZHqFN1pQj6rVMDsfBBeDTTeyh3IGRXpFBfYC/jZXrOVRw1v05Ed+rYHDoBp444rNRhuhCcutbt1jfysh7xJKk3++etSuA6hURJXKJDnv7DE+PzpFd1yzJLceo35NvTCsMFbxeay33pYOUWo3gMF46tUufJGiC+DCA8iZN9B0gx8iP+SEHy70+nlgoaYQ1F6MK1MDy6rihVcV8M4rPS+wTmtHJZ1ULABiek7hOgGy5nH5GTdqUr6Syc6Wo7mdNKSkckUHCzYb0=
   file_glob: true
   # file: build/*.tar.gz*
-  file: build/**/*
+  file: "*/**/*"
   skip_cleanup: true
   on:
     repo: timidri/lyra
