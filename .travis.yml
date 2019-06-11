@@ -6,21 +6,20 @@ go:
 env:
   - GO111MODULE=on
 script:
-  - rm go.sum # Workaround for https://github.com/kubernetes/kubernetes/issues/69040
-  - node --version
-  - nvm install 11
-  - nvm use 11
-  - node --version
-  # - make all
-  # disabling for now to speed up for testing
-  -  make lyra
+  # - rm go.sum # Workaround for https://github.com/kubernetes/kubernetes/issues/69040
+  # - node --version
+  # - nvm install 11
+  # - nvm use 11
+  # - node --version
+  # # - make all
+  # # disabling for now to speed up for testing
+  # -  make lyra
+
 # Use different deploy prep based on OS
-
-
 matrix:
   include:
-    - os: linux
-      dist: trusty
+    # - os: linux
+    #   dist: trusty
       # before_deploy:
         #  - sudo apt-get install -y upx
         # - make dist-release
