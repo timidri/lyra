@@ -1,5 +1,5 @@
-addons:
-  ssh_known_hosts: github.com
+# addons:
+#   ssh_known_hosts: github.com
 language: go
 go:
   - stable
@@ -30,7 +30,7 @@ matrix:
        - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
        - mkdir -p /usr/local/Homebrew/Library/Taps/lyraproj
        - pushd /usr/local/Homebrew/Library/Taps/lyraproj
-       - git clone git@github.com:timidri/homebrew-lyra.git
+       - git clone https://github.com:timidri/homebrew-lyra.git
        - popd
        - brew install --build-bottle lyra
        - brew bottle lyra
